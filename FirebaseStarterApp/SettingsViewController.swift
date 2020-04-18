@@ -33,7 +33,7 @@ class SettingsViewController: UITableViewController {
                         currencyLocale: self.country.currencyLocale)
     }
 
-    private var theme: Theme = .Custom
+    private var theme: Theme = .Default
     private var additionalPaymentOptions: STPPaymentOptionType = .default
     private var requiredBillingAddressFields: RequiredBillingAddressFields = .None
     private var requiredShippingAddressFields: RequiredShippingAddressFields = .None

@@ -17,10 +17,10 @@ class EmojiCheckoutCell: UITableViewCell {
         priceLabel = UILabel()
         priceLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         detailLabel = UILabel()
-        detailLabel.font = UIFont.systemFont(ofSize: 14)
+        detailLabel.font = UIFont.systemFont(ofSize: 0)
         detailLabel.textColor = .stripeDarkBlue
         emojiLabel = UILabel()
-        emojiLabel.font = UIFont.systemFont(ofSize: 52)
+        emojiLabel.font = UIFont.systemFont(ofSize: 16)
 
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         installConstraints()

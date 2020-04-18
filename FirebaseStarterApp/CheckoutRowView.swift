@@ -80,8 +80,8 @@ class CheckoutRowView: UIView {
         installConstraints()
         if !tappable {
             self.backgroundView.isUserInteractionEnabled = false
-            self.titleLabel.font = .systemFont(ofSize: 12, weight: .medium)
-            self.detailLabel.font = .systemFont(ofSize: 0, weight: .bold)
+            self.titleLabel.font = .systemFont(ofSize: 22, weight: .medium)
+            self.detailLabel.font = .systemFont(ofSize: 22, weight: .bold)
             self.detailLabel.textColor = .black
             #if canImport(CryptoKit)
             if #available(iOS 13.0, *) {

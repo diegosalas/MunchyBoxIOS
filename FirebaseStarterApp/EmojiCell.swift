@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Kingfisher
+//import KingfisherSwiftUI
 
 let emojiBackgroundBottomPadding = CGFloat(50)
 let emojiContentInset = CGFloat(2)
 let defaultPadding = CGFloat(8)
+
 
 class EmojiCell: UICollectionViewCell {
     struct Colors {
@@ -18,6 +21,7 @@ class EmojiCell: UICollectionViewCell {
         let price: UIColor
     }
     let priceLabel: UILabel
+    let emojiImage: UIImage
     let emojiLabel: UILabel
     let plusMinusButton: PlusMinusButton
     
@@ -51,7 +55,9 @@ class EmojiCell: UICollectionViewCell {
     override init(frame: CGRect) {
         priceLabel = UILabel()
         priceLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        emojiImage = UIImage()
         emojiLabel = UILabel()
+        
         emojiLabel.font = UIFont.systemFont(ofSize: 16)
         plusMinusButton = PlusMinusButton()
         plusMinusButton.backgroundColor = .clear
@@ -68,6 +74,9 @@ class EmojiCell: UICollectionViewCell {
     public func configure(with product: Product, numberFormatter: NumberFormatter) {
         priceLabel.text = numberFormatter.string(from: NSNumber(value: Float(product.price)/100))!
         emojiLabel.text = product.emoji
+        let url = URL(string: product.image)
+         // this downloads the image asynchronously if it's not cached yet
+         emojiImage.kf.setImage(with: url)
     }
     
     //MARK: - Layout
