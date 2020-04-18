@@ -37,7 +37,7 @@ class ATCClassicLandingScreenViewController: UIViewController {
         titleLabel.textColor = HelperDarkMode.mainTextColor
         
         subtitleLabel.font = subtitleFont
-        subtitleLabel.text = "Start your iOS app with this Firebase Swift Starter Kit."
+        subtitleLabel.text = "Start MunchyBox app with your Email or Facebook Login"
         subtitleLabel.textColor = HelperDarkMode.mainTextColor
         
         loginButton.setTitle("Log in", for: .normal)

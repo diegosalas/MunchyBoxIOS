@@ -10,28 +10,33 @@ import UIKit
 
 struct Product {
     let emoji: String
+    let image: String
     let price: Int
 }
 
 class BrowseProductsViewController: UICollectionViewController {
 
     let productsAndPrices = [
-        Product(emoji: "👕", price: 2000),
-        Product(emoji: "👖", price: 4000),
-        Product(emoji: "👗", price: 3000),
-        Product(emoji: "👞", price: 700),
-        Product(emoji: "👟", price: 600),
-        Product(emoji: "👠", price: 1000),
-        Product(emoji: "👡", price: 2000),
-        Product(emoji: "👢", price: 2500),
-        Product(emoji: "👒", price: 800),
-        Product(emoji: "👙", price: 3000),
-        Product(emoji: "💄", price: 2000),
-        Product(emoji: "🎩", price: 5000),
-        Product(emoji: "👛", price: 5500),
-        Product(emoji: "👜", price: 6000),
-        Product(emoji: "🕶", price: 2000),
-        Product(emoji: "👚", price: 2500),
+        Product(emoji: "N95 Mask",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/masks4.jpg?alt=media&token=add39e7a-7912-4aee-9a66-49b9f7d4f4fd", price: 1800),
+        Product(emoji: "Sanitizer",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/sanitizer.png?alt=media&token=ee1ccf00-909c-4298-b68b-719ae15f0da9", price: 650),
+        Product(emoji: "Mini Listerine",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/lister.png?alt=media&token=d6442ff6-80dc-4651-b283-fa70eac34e20", price: 650),
+        Product(emoji: "Boss Coffee",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/BOSS.png?alt=media&token=ebd1fecc-34b3-4327-913f-f98419240f33", price: 700),
+        Product(emoji: "Mini Soft Drink",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/redbul.png?alt=media&token=f49541c7-ff5f-4d94-bd33-e7cc1ec3cf21", price: 300),
+        Product(emoji: "Tim Tam",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/timtam.png?alt=media&token=fee402da-1e03-447f-85a7-0fcaf930ce31", price: 300),
+        Product(emoji: "Tic tac candy",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/tictac.png?alt=media&token=580e23e6-1c89-489b-8d65-ea7ca5d3cadf", price: 350),
+        Product(emoji: "Eclipse",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/eclips.png?alt=media&token=53692036-bfee-42cb-ae8b-bfb04fba783d", price: 400),
+        Product(emoji: "Mentos",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/mentos.png?alt=media&token=76197dec-7207-4f41-ac4b-50d7e4c5eb6b", price: 400),
+        Product(emoji: "Skittles",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/skittl.png?alt=media&token=ea39319d-069a-4983-96a9-5ae32f99d391", price: 400),
+        Product(emoji: "Jelly Belly",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/jelly.png?alt=media&token=872839d5-1b83-41dd-a6e0-f6e58a01c303", price: 400),
+        Product(emoji: "Doritos",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/dorito.png?alt=media&token=715913aa-96ab-43a9-8053-247d4a2779ac", price: 200),
+        Product(emoji: "Smiths",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/smith.png?alt=media&token=9417c993-40b0-4d93-b7e3-dc41700f5b14", price: 200),
+        Product(emoji: "Nutella and Go",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/nutell.png?alt=media&token=50142249-1412-4851-b2bc-cc6df6ff82ed", price: 600),
+        Product(emoji: "Freddo",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/freddo.png?alt=media&token=d199b4c5-e97e-47e5-b1eb-307944226e6d", price: 300),
+        Product(emoji: "Maltesers",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/maltes.png?alt=media&token=f2b6fb5b-5775-41fc-9f2c-c6b952afa45d", price: 150),
+        Product(emoji: "Kit Kat", image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/kitkat.png?alt=media&token=c19259de-2d40-4bb5-9f4d-4094946d9df7",price: 550),
+        Product(emoji: "M&M Tube",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/m%26m.png?alt=media&token=ffe8fceb-9bb4-4944-b082-26d72e894274", price: 500),
+        Product(emoji: "Snickers Fun Size",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/Snicke.png?alt=media&token=83a6ff60-d334-4171-9282-37ff0c1bee10", price: 200),
+        Product(emoji: "Extra",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/extra.png?alt=media&token=020f8d80-9ff4-432c-bccf-0bb87581e7d1", price: 500),
     ]
     
     var shoppingCart = [Product]() {

@@ -26,7 +26,7 @@ class EmojiCell: UICollectionViewCell {
             if isSelected {
                 UIView.animate(withDuration: 0.2) {
                     self.contentView.backgroundColor = .stripeBrightGreen
-                    self.emojiLabel.textColor = .white
+                    self.emojiLabel.textColor = .stripeBrightGreen
                     self.priceLabel.textColor = .white
                     self.plusMinusButton.style = .minus
                 }
@@ -52,7 +52,7 @@ class EmojiCell: UICollectionViewCell {
         priceLabel = UILabel()
         priceLabel.font = UIFont.boldSystemFont(ofSize: 16)
         emojiLabel = UILabel()
-        emojiLabel.font = UIFont.systemFont(ofSize: 75)
+        emojiLabel.font = UIFont.systemFont(ofSize: 16)
         plusMinusButton = PlusMinusButton()
         plusMinusButton.backgroundColor = .clear
         super.init(frame: frame)

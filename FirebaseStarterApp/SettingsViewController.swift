@@ -33,20 +33,20 @@ class SettingsViewController: UITableViewController {
                         currencyLocale: self.country.currencyLocale)
     }
 
-    private var theme: Theme = .Default
+    private var theme: Theme = .Custom
     private var additionalPaymentOptions: STPPaymentOptionType = .default
-    private var requiredBillingAddressFields: RequiredBillingAddressFields = .PostalCode
-    private var requiredShippingAddressFields: RequiredShippingAddressFields = .PostalAddressPhone
+    private var requiredBillingAddressFields: RequiredBillingAddressFields = .None
+    private var requiredShippingAddressFields: RequiredShippingAddressFields = .None
     private var shippingType: ShippingType = .Shipping
-    private var country: Country = .US
+    private var country: Country = .AU
 
     fileprivate enum Section: String {
         case Theme = "Theme"
         case AdditionalPaymentOptions = "Additional Payment Options"
         case Country = "Country (For Currency and Supported Payment Options)"
-        case RequiredBillingAddressFields = "Required Billing Address Fields"
-        case RequiredShippingAddressFields = "Required Shipping Address Fields"
-        case ShippingType = "Shipping Type"
+//        case RequiredBillingAddressFields = "Required Billing Address Fields"
+//        case RequiredShippingAddressFields = "Required Shipping Address Fields"
+        case ShippingType = "Email Address"
         case Session = "Session"
 
         init(section: Int) {
@@ -54,10 +54,12 @@ class SettingsViewController: UITableViewController {
             case 0: self = .Theme
             case 1: self = .AdditionalPaymentOptions
             case 2: self = .Country
-            case 3: self = .RequiredBillingAddressFields
-            case 4: self = .RequiredShippingAddressFields
-            case 5: self = .ShippingType
-            default: self = .Session
+//            case 3: self = .RequiredBillingAddressFields
+//            case 4: self = .RequiredShippingAddressFields
+            case 3: self = .Session
+            case 4: self = .ShippingType
+            default:
+                self = .init(section: 0)
             }
         }
         
@@ -69,14 +71,14 @@ class SettingsViewController: UITableViewController {
                 return 1
             case .Country:
                 return 2
-            case .RequiredBillingAddressFields:
-                return 3
-            case .RequiredShippingAddressFields:
-                return 4
+//            case .RequiredBillingAddressFields:
+//                return 3
+//            case .RequiredShippingAddressFields:
+//                return 4
             case .ShippingType:
-                return 5
+                return 3
             case .Session:
-                return 6
+                return 4
             }
         }
     }
@@ -148,16 +150,20 @@ class SettingsViewController: UITableViewController {
     fileprivate enum Country: String {
             case US = "United States"
             case MY = "Malaysia"
+            case AU = "Australia"
 
             init(row: Int) {
                 switch row {
-                case 0: self = .US
+                case 0: self = .AU
+                case 1:self = .US
                 default: self = .MY
                 }
             }
 
             var countryID: String {
                 switch self {
+                case .AU:
+                    return "aud"
                 case .US:
                     return "us"
                 case .MY:
@@ -167,6 +173,8 @@ class SettingsViewController: UITableViewController {
         
             var currency: String {
                 switch self {
+                case .AU:
+                    return "aud"
                 case .US:
                     return "usd"
                 case .MY:
@@ -300,7 +308,7 @@ class SettingsViewController: UITableViewController {
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 7
+        return 4
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -308,9 +316,9 @@ class SettingsViewController: UITableViewController {
         case .Theme: return 2
         case .AdditionalPaymentOptions: return 2
         case .Country: return 2
-        case .RequiredBillingAddressFields: return 4
-        case .RequiredShippingAddressFields: return 4
-        case .ShippingType: return 2
+//        case .RequiredBillingAddressFields: return 0
+//        case .RequiredShippingAddressFields: return 0
+        case .ShippingType: return 1
         case .Session: return 1
         }
     }
@@ -334,15 +342,18 @@ class SettingsViewController: UITableViewController {
             let value = Country(row: (indexPath as NSIndexPath).row)
             cell.textLabel?.text = value.rawValue
             cell.accessoryType = value == self.country ? .checkmark : .none
-        case .RequiredBillingAddressFields:
-            let value = RequiredBillingAddressFields(row: (indexPath as NSIndexPath).row)
-            cell.textLabel?.text = value.rawValue
-            cell.accessoryType = value == self.requiredBillingAddressFields ? .checkmark : .none
-        case .RequiredShippingAddressFields:
-            let value = RequiredShippingAddressFields(row: indexPath.row)
-            cell.textLabel?.text = value.rawValue
-            cell.accessoryType = value == self.requiredShippingAddressFields ? .checkmark : .none
+//        case .RequiredBillingAddressFields:
+//            print("")
+//            let value = RequiredBillingAddressFields(row: (indexPath as NSIndexPath).row)
+//            cell.textLabel?.text = value.rawValue
+//            cell.accessoryType = value == self.requiredBillingAddressFields ? .checkmark : .none
+//        case .RequiredShippingAddressFields:
+//             print("")
+//            let value = RequiredShippingAddressFields(row: indexPath.row)
+//            cell.textLabel?.text = value.rawValue
+//            cell.accessoryType = value == self.requiredShippingAddressFields ? .checkmark : .none
         case .ShippingType:
+              print("")
             let value = ShippingType(row: indexPath.row)
             cell.textLabel?.text = value.rawValue
             cell.accessoryType = value == self.shippingType ? .checkmark : .none
@@ -380,10 +391,10 @@ class SettingsViewController: UITableViewController {
             self.additionalPaymentOptions = options
         case .Country:
             self.country = Country(row: (indexPath as NSIndexPath).row)
-        case .RequiredBillingAddressFields:
-            self.requiredBillingAddressFields = RequiredBillingAddressFields(row: (indexPath as NSIndexPath).row)
-        case .RequiredShippingAddressFields:
-            self.requiredShippingAddressFields = RequiredShippingAddressFields(row: (indexPath as NSIndexPath).row)
+//        case .RequiredBillingAddressFields:
+//            self.requiredBillingAddressFields = RequiredBillingAddressFields(row: (indexPath as NSIndexPath).row)
+//        case .RequiredShippingAddressFields:
+//            self.requiredShippingAddressFields = RequiredShippingAddressFields(row: (indexPath as NSIndexPath).row)
         case .ShippingType:
             self.shippingType = ShippingType(row: (indexPath as NSIndexPath).row)
         case .Session:
