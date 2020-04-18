@@ -108,17 +108,20 @@ class ATCClassicSignUpViewController: UIViewController {
                 var message: String = ""
                 if (success) {
                     message = "User was sucessfully created."
+                  
                 } else {
                     message = "There was an error."
                 }
                 let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                 self.display(alertController: alertController)
+                self.navigationController?.popViewController(animated: true)
             }
         }
     }
 
     func display(alertController: UIAlertController) {
         self.present(alertController, animated: true, completion: nil)
+    
     }
 }

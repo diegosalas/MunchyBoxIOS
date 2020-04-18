@@ -29,8 +29,8 @@ class ATCClassicLandingScreenViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = HelperDarkMode.mainThemeBackgroundColor
-        logoImageView.image = UIImage.localImage("logo", template: true)
-        logoImageView.tintColor = tintColor
+//        logoImageView.image = UIImage.localImage("logo", template: true)
+//        logoImageView.tintColor = tintColor
         
         titleLabel.font = titleFont
         titleLabel.text = "Welcome to your app"

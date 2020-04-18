@@ -12,6 +12,7 @@ import FirebaseAuth
 import UIKit
 
 class ATCClassicLoginScreenViewController: UIViewController {
+  var window: UIWindow?
   
   @IBOutlet var titleLabel: UILabel!
   @IBOutlet var passwordTextField: ATCTextField!
@@ -135,10 +136,24 @@ class ATCClassicLoginScreenViewController: UIViewController {
   extension ATCClassicLoginScreenViewController {
     
     func showPopup(isSuccess: Bool) {
-      let successMessage = "User was sucessfully logged in."
-      let errorMessage = "Something went wrong. Please try again"
-      let alert = UIAlertController(title: isSuccess ? "Success": "Error", message: isSuccess ? successMessage: errorMessage, preferredStyle: UIAlertController.Style.alert)
-      alert.addAction(UIAlertAction(title: "Done", style: UIAlertAction.Style.default, handler: nil))
-      self.present(alert, animated: true, completion: nil)
+       
+        
+        if isSuccess{
+             let rootVC = BrowseProductsViewController()
+             let navigationController = UINavigationController(rootViewController: rootVC)
+             let window = UIWindow(frame: UIScreen.main.bounds)
+             window.rootViewController = navigationController;
+             window.makeKeyAndVisible()
+             self.window = window
+        }else{
+          let successMessage = "User was sucessfully logged in."
+          let errorMessage = "Something went wrong. Please try again"
+          let alert = UIAlertController(title: isSuccess ? "Success": "Error", message: isSuccess ? successMessage: errorMessage, preferredStyle: UIAlertController.Style.alert)
+          alert.addAction(UIAlertAction(title: "Done", style: UIAlertAction.Style.default, handler: nil))
+          self.present(alert, animated: true, completion: nil)
+            
+        }
+        
+        
     }
 }

@@ -2,39 +2,37 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
-	<string>ca-app-pub-3940256099942544/2934735716</string>
-	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
-	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>706061484183-0i8if8kqjcu8uar4bmr6m54cs7vmue45.apps.googleusercontent.com</string>
+	<string>1004074412283-uv4pni4mvj7iuqh8h54bu8pe7mv62e5f.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.706061484183-0i8if8kqjcu8uar4bmr6m54cs7vmue45</string>
+	<string>com.googleusercontent.apps.1004074412283-uv4pni4mvj7iuqh8h54bu8pe7mv62e5f</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>1004074412283-pothhneunvdiht7bfk47dbdj9dnl6d4i.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCh_R982LwXQkP9gDxN8Cfmc9NeZfx6z0Y</string>
+	<string>AIzaSyBEmehfc4i79cwBx0mkvXrYSL2E19qENfI</string>
 	<key>GCM_SENDER_ID</key>
-	<string>706061484183</string>
+	<string>1004074412283</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>io.instamobile.FirebaseStarterApp</string>
+	<string>io.munchybox.app</string>
 	<key>PROJECT_ID</key>
-	<string>ios-app-templates</string>
+	<string>mbox-eff46</string>
 	<key>STORAGE_BUCKET</key>
-	<string>ios-app-templates.appspot.com</string>
+	<string>mbox-eff46.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true></true>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
 	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false></false>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
 	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:706061484183:ios:9b0dbb31017f98cd</string>
+	<string>1:1004074412283:ios:b1f97629a94448d389e85e</string>
 	<key>DATABASE_URL</key>
-	<string>https://ios-app-templates.firebaseio.com</string>
+	<string>https://mbox-eff46.firebaseio.com</string>
 </dict>
 </plist>

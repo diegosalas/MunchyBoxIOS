@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:FirebaseStarterApp.xcodeproj">
+      location = "group:/Users/U029760/Documents/learning/FirebaseStarterApp 2/Munchy Box.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

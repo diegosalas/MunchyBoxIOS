@@ -8,6 +8,7 @@
 
 import UIKit
 import Stripe
+import Firebase
 
 struct Settings {
     let theme: STPTheme
@@ -390,6 +391,15 @@ class SettingsViewController: UITableViewController {
             for cookie in cookieStore.cookies ?? [] {
                 cookieStore.deleteCookie(cookie)
             }
+          let firebaseAuth = Auth.auth()
+          do {
+            try firebaseAuth.signOut()
+          } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+          }
+          exit(0)
+        
+            
         }
         tableView.reloadSections(IndexSet(integer: (indexPath as NSIndexPath).section), with: .automatic)
     }
