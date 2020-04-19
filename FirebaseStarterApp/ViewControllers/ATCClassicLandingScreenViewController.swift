@@ -33,11 +33,11 @@ class ATCClassicLandingScreenViewController: UIViewController {
 //        logoImageView.tintColor = tintColor
         
         titleLabel.font = titleFont
-        titleLabel.text = "Welcome to your app"
+        titleLabel.text = "Welcome to Munchy Box"
         titleLabel.textColor = HelperDarkMode.mainTextColor
         
         subtitleLabel.font = subtitleFont
-        subtitleLabel.text = "Start MunchyBox app with your Email or Facebook Login"
+        subtitleLabel.text = "Start MunchyBox app with your Email or Facebook Account"
         subtitleLabel.textColor = HelperDarkMode.mainTextColor
         
         loginButton.setTitle("Log in", for: .normal)

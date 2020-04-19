@@ -39,7 +39,7 @@ class ATCClassicLoginScreenViewController: UIViewController {
     super.viewDidLoad()
     view.backgroundColor = backgroundColor
     backButton.setImage(UIImage.localImage("arrow-back-icon", template: true), for: .normal)
-    backButton.tintColor = UIColor(hexString: "#282E4F")
+    backButton.tintColor = .stripeBrightGreen
     backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
     
     titleLabel.font = titleFont

@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import Kingfisher
+import URLImage
+//import Kingfisher
 //import KingfisherSwiftUI
 
 let emojiBackgroundBottomPadding = CGFloat(50)
@@ -21,7 +22,7 @@ class EmojiCell: UICollectionViewCell {
         let price: UIColor
     }
     let priceLabel: UILabel
-    let emojiImage: UIImage
+    let emojiImage:UIImageView
     let emojiLabel: UILabel
     let plusMinusButton: PlusMinusButton
     
@@ -55,7 +56,9 @@ class EmojiCell: UICollectionViewCell {
     override init(frame: CGRect) {
         priceLabel = UILabel()
         priceLabel.font = UIFont.boldSystemFont(ofSize: 16)
-        emojiImage = UIImage()
+        emojiImage = UIImageView()
+       
+
         emojiLabel = UILabel()
         
         emojiLabel.font = UIFont.systemFont(ofSize: 16)
@@ -74,9 +77,14 @@ class EmojiCell: UICollectionViewCell {
     public func configure(with product: Product, numberFormatter: NumberFormatter) {
         priceLabel.text = numberFormatter.string(from: NSNumber(value: Float(product.price)/100))!
         emojiLabel.text = product.emoji
-        let url = URL(string: product.image)
+      
+//        emojiImage.image = UIImage(named: "logo.png")
+//        emojiImage.frame = CGRect(x: 0, y: 00, width: 20, height: 20)
+//        emojiImage.contentMode = .scaleToFill
+     
+   
          // this downloads the image asynchronously if it's not cached yet
-         emojiImage.kf.setImage(with: url)
+       
     }
     
     //MARK: - Layout
@@ -91,7 +99,7 @@ class EmojiCell: UICollectionViewCell {
         #endif
         emojiContentBackground.layer.cornerRadius = 4
         
-        for view in [emojiContentBackground, priceLabel, emojiLabel, plusMinusButton] {
+        for view in [emojiContentBackground, priceLabel, emojiImage,emojiLabel, plusMinusButton] {
             view.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(view)
         }
@@ -104,6 +112,8 @@ class EmojiCell: UICollectionViewCell {
             
             emojiLabel.centerXAnchor.constraint(equalTo: emojiContentBackground.centerXAnchor),
             emojiLabel.centerYAnchor.constraint(equalTo: emojiContentBackground.centerYAnchor),
+//           emojiImage.centerXAnchor.constraint(equalTo: emojiContentBackground.centerXAnchor),
+//            emojiImage.centerYAnchor.constraint(equalTo: emojiContentBackground.centerYAnchor),
             
             priceLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: defaultPadding),
             priceLabel.centerYAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -emojiBackgroundBottomPadding/2),
@@ -162,4 +172,7 @@ class PlusMinusButton: UIView {
             verticalLine.fill()
         }
     }
+    
+    
 }
+

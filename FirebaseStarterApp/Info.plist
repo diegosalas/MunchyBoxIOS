@@ -15,22 +15,24 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb285315185217069</string>
+				<string>fb2839597522800110</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>FacebookAppID</key>
-	<string>285315185217069</string>
+	<string>2839597522800110</string>
 	<key>FacebookDisplayName</key>
-	<string>iOSAppTemplates</string>
+	<string>MunchyBox.io</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
@@ -41,7 +43,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Read QR</string>
+	<string>Read Driver QR</string>
 	<key>UILaunchStoryboardName</key>
 	<string>MunchyLaunch</string>
 	<key>UIRequiredDeviceCapabilities</key>

@@ -32,9 +32,10 @@ class ATCClassicSignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = backgroundColor
-        let color = UIColor(hexString: "#282E4F")
-        backButton.tintColor = color
+        
         backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
+        backButton.tintColor = .stripeBrightGreen
+         
 
         titleLabel.font = titleFont
         titleLabel.text = "Sign Up"

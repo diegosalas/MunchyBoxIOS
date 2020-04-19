@@ -17,8 +17,8 @@ struct Product {
 class BrowseProductsViewController: UICollectionViewController {
 
     let productsAndPrices = [
-        Product(emoji: "N95 Mask",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/masks4.jpg?alt=media&token=add39e7a-7912-4aee-9a66-49b9f7d4f4fd", price: 1800),
-        Product(emoji: "Sanitizer",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/sanitizer.png?alt=media&token=ee1ccf00-909c-4298-b68b-719ae15f0da9", price: 650),
+        Product(emoji: "N95 Mask",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/masks4.jpg?alt=media&token=add39e7a-7912-4aee-9a66-49b9f7d4f4fd", price: 1000),
+        Product(emoji: "Sanitizer",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/sanitizer.png?alt=media&token=ee1ccf00-909c-4298-b68b-719ae15f0da9", price: 250),
         Product(emoji: "Mini Listerine",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/lister.png?alt=media&token=d6442ff6-80dc-4651-b283-fa70eac34e20", price: 650),
         Product(emoji: "Boss Coffee",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/BOSS.png?alt=media&token=ebd1fecc-34b3-4327-913f-f98419240f33", price: 700),
         Product(emoji: "Mini Soft Drink",image: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/redbul.png?alt=media&token=f49541c7-ff5f-4d94-bd33-e7cc1ec3cf21", price: 300),
