@@ -11,7 +11,7 @@ import Stripe
 
 class CheckoutViewController: UIViewController {
     var window: UIWindow?
-    // 1) To get started with this demo, first head to https://dashboard.stripe.com/account/apikeys
+    // 1) To get started with2 this demo, first head to https://dashboard.stripe.com/account/apikeys
     // and copy your "Test Publishable Key" (it looks like pk_test_abcdef) into the line below.
 //    var stripePublishableKey = "pk_live_zhvSJdOt5e3ZxUiy2aOUk9rL00NteMVSrJ"
     var stripePublishableKey = "pk_test_gJkD9uVVrv6Wes6v8Rjg6naO00MBG0Y0G3"
