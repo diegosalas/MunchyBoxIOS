@@ -39,6 +39,8 @@
 		598AF40D244252BC001B8142 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598AF403244252BC001B8142 /* CheckoutViewController.swift */; };
 		598AF40E244252BC001B8142 /* CheckoutRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598AF404244252BC001B8142 /* CheckoutRowView.swift */; };
 		598AF40F244252BC001B8142 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598AF405244252BC001B8142 /* SettingsViewController.swift */; };
+		5999BCB4244EEFE200C34B7E /* white-logo-masked-circular_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5999BCB3244EEFE200C34B7E /* white-logo-masked-circular_2x.png */; };
+		5999BCB6244EF7DF00C34B7E /* white-logo-default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5999BCB5244EF7DF00C34B7E /* white-logo-default.png */; };
 		D6D79D37E8013FF32550A338 /* Pods_Munchy_Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5148FB30C92114EB97FC19 /* Pods_Munchy_Box.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +64,7 @@
 		1773BFF1221FAE14005C82D8 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		1773BFF3221FB4D8005C82D8 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		215D7A3C89B96AAD3DDA8E1F /* Pods-Munchy Box.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Munchy Box.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Munchy Box/Pods-Munchy Box.debug.xcconfig"; sourceTree = "<group>"; };
+		59020770244C8017007C6D0E /* Munchy BoxDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Munchy BoxDebug.entitlements"; sourceTree = "<group>"; };
 		596387C1244A7D58007EF95A /* LeerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeerViewController.swift; sourceTree = "<group>"; };
 		596387C7244A86FC007EF95A /* LeerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeerViewController.xib; sourceTree = "<group>"; };
 		596387EA244B196A007EF95A /* MunchyLaunch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MunchyLaunch.storyboard; sourceTree = "<group>"; };
@@ -87,6 +90,8 @@
 		598AF403244252BC001B8142 /* CheckoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 		598AF404244252BC001B8142 /* CheckoutRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutRowView.swift; sourceTree = "<group>"; };
 		598AF405244252BC001B8142 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		5999BCB3244EEFE200C34B7E /* white-logo-masked-circular_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white-logo-masked-circular_2x.png"; sourceTree = "<group>"; };
+		5999BCB5244EF7DF00C34B7E /* white-logo-default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white-logo-default.png"; sourceTree = "<group>"; };
 		6A5517EA5417A89CC32964DA /* Pods-Munchy Box.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Munchy Box.release.xcconfig"; path = "Pods/Target Support Files/Pods-Munchy Box/Pods-Munchy Box.release.xcconfig"; sourceTree = "<group>"; };
 		8F562D2664D895A5CDEF3A83 /* Pods-FirebaseStarterApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseStarterApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseStarterApp/Pods-FirebaseStarterApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C65F32946A0E14A8914D92CE /* Pods-FirebaseStarterApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseStarterApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseStarterApp/Pods-FirebaseStarterApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,8 +121,11 @@
 		1773BFBD221FA51C005C82D8 = {
 			isa = PBXGroup;
 			children = (
+				59020770244C8017007C6D0E /* Munchy BoxDebug.entitlements */,
 				596387EE244B1BF4007EF95A /* logo.png */,
 				596387EC244B1BAF007EF95A /* logo-horizontal.png */,
+				5999BCB3244EEFE200C34B7E /* white-logo-masked-circular_2x.png */,
+				5999BCB5244EF7DF00C34B7E /* white-logo-default.png */,
 				596387EA244B196A007EF95A /* MunchyLaunch.storyboard */,
 				1773BFC8221FA51C005C82D8 /* FirebaseStarterApp */,
 				1773BFC7221FA51C005C82D8 /* Products */,
@@ -301,6 +309,8 @@
 				598AF407244252BC001B8142 /* Localizable.strings in Resources */,
 				1773BFE4221FA7D1005C82D8 /* ATCClassicLandingScreenViewController.xib in Resources */,
 				596387ED244B1BAF007EF95A /* logo-horizontal.png in Resources */,
+				5999BCB4244EEFE200C34B7E /* white-logo-masked-circular_2x.png in Resources */,
+				5999BCB6244EF7DF00C34B7E /* white-logo-default.png in Resources */,
 				1773BFD1221FA51F005C82D8 /* Assets.xcassets in Resources */,
 				1773BFE2221FA7D1005C82D8 /* ATCClassicSignUpViewController.xib in Resources */,
 				1773BFE7221FA7D1005C82D8 /* ATCClassicLoginScreenViewController.xib in Resources */,
@@ -523,18 +533,18 @@
 			baseConfigurationReference = 215D7A3C89B96AAD3DDA8E1F /* Pods-Munchy Box.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconMunchy;
-				CODE_SIGN_ENTITLEMENTS = FirebaseStarterApp/FirebaseStarterApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Munchy BoxDebug.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = HWV4X6G5UE;
 				INFOPLIST_FILE = FirebaseStarterApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = io.munchybox.app;
 				PRODUCT_NAME = "Munchy Box";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -551,15 +561,15 @@
 				CODE_SIGN_ENTITLEMENTS = FirebaseStarterApp/FirebaseStarterApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = HWV4X6G5UE;
 				INFOPLIST_FILE = FirebaseStarterApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = io.munchybox.app;
 				PRODUCT_NAME = "Munchy Box";
 				PROVISIONING_PROFILE_SPECIFIER = "";

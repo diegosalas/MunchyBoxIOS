@@ -10,10 +10,11 @@ import UIKit
 import Stripe
 
 class CheckoutViewController: UIViewController {
-
+    var window: UIWindow?
     // 1) To get started with this demo, first head to https://dashboard.stripe.com/account/apikeys
     // and copy your "Test Publishable Key" (it looks like pk_test_abcdef) into the line below.
-    var stripePublishableKey = "pk_live_zhvSJdOt5e3ZxUiy2aOUk9rL00NteMVSrJ"
+//    var stripePublishableKey = "pk_live_zhvSJdOt5e3ZxUiy2aOUk9rL00NteMVSrJ"
+    var stripePublishableKey = "pk_test_gJkD9uVVrv6Wes6v8Rjg6naO00MBG0Y0G3"
 
     // 2) Next, optionally, to have this demo save your user's payment details, head to
     // https://github.com/stripe/example-mobile-backend/tree/v18.1.0, click "Deploy to Heroku", and follow
@@ -23,7 +24,7 @@ class CheckoutViewController: UIViewController {
 
     // 3) Optionally, to enable Apple Pay, follow the instructions at https://stripe.com/docs/mobile/apple-pay
     // to create an Apple Merchant ID. Replace nil on the line below with it (it looks like merchant.com.yourappname).
-    var appleMerchantID: String? = ""
+    var appleMerchantID: String? = "merchant.com.munchybox.io"
 
     // These values will be shown to the user when they purchase with Apple Pay.
     let companyName = "Munchy Box"
@@ -301,14 +302,28 @@ extension CheckoutViewController: STPPaymentContextDelegate {
             message = error?.localizedDescription ?? ""
         case .success:
             title = "Success"
-            message = "Your purchase was successful!"
+            message = "Thank You, for your successful purchase!"
         case .userCancellation:
             return()
         @unknown default:
             return()
         }
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let action = UIAlertAction(title: "OK", style: .default, handler: {(alert: UIAlertAction!) in
+            
+             print("Thank you for your order")
+             BrowseProductsViewController().shoppingCart.removeAll()
+//             let rootVC = BrowseProductsViewController()
+//             let navigationController = UINavigationController(rootViewController: rootVC)
+//             let window = UIWindow(frame: UIScreen.main.bounds)
+//             window.rootViewController = navigationController;
+//             window.makeKeyAndVisible()
+//             self.window = window
+            
+        })
+        let image = UIImage(named: "apple")
+        action.setValue(image?.withRenderingMode(.alwaysOriginal), forKey: "image")
+        
         alertController.addAction(action)
         self.present(alertController, animated: true, completion: nil)
     }

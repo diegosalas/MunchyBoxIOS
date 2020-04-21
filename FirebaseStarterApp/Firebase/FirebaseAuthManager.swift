@@ -10,12 +10,14 @@ import FirebaseAuth
 import UIKit
 
 class FirebaseAuthManager {
+    
 
     func login(credential: AuthCredential, completionBlock: @escaping (_ success: Bool) -> Void) {
         Auth.auth().signIn(with: credential, completion: { (firebaseUser, error) in
             print(firebaseUser)
             completionBlock(error == nil)
         })
+       
     }
 
     func createUser(email: String, password: String, completionBlock: @escaping (_ success: Bool) -> Void) {
@@ -39,4 +41,8 @@ class FirebaseAuthManager {
             }
         }
     }
+    
+    
+    
+ 
 }

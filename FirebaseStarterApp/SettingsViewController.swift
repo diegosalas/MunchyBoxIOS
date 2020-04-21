@@ -148,15 +148,16 @@ class SettingsViewController: UITableViewController {
     }
     
     fileprivate enum Country: String {
-            case US = "United States"
-            case MY = "Malaysia"
             case AU = "Australia"
+            case US = "United States"
+            
+        
 
             init(row: Int) {
                 switch row {
                 case 0: self = .AU
                 case 1:self = .US
-                default: self = .MY
+                default: self = .AU
                 }
             }
 
@@ -166,8 +167,7 @@ class SettingsViewController: UITableViewController {
                     return "aud"
                 case .US:
                     return "us"
-                case .MY:
-                    return "my"
+               
                 }
             }
         
@@ -177,8 +177,7 @@ class SettingsViewController: UITableViewController {
                     return "aud"
                 case .US:
                     return "usd"
-                case .MY:
-                    return "myr"
+            
                 }
             }
         
@@ -384,7 +383,7 @@ class SettingsViewController: UITableViewController {
                     options.remove(.FPX)
                 } else {
                     options.insert(.FPX)
-                    self.country = .MY
+                    self.country = .AU
                     tableView.reloadSections(IndexSet(integer: Section.Country.intValue), with: .automatic)
                 }
             }

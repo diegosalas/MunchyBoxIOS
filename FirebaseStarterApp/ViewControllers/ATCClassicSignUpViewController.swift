@@ -34,7 +34,7 @@ class ATCClassicSignUpViewController: UIViewController {
         view.backgroundColor = backgroundColor
         
         backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
-        backButton.tintColor = .stripeBrightGreen
+        backButton.tintColor = UIColor(hexString: "#ff5a66")
          
 
         titleLabel.font = titleFont
@@ -43,7 +43,7 @@ class ATCClassicSignUpViewController: UIViewController {
 
         nameTextField.configure(color: textFieldColor,
                                 font: textFieldFont,
-                                cornerRadius: 40/2,
+                                cornerRadius: 55/2,
                                 borderColor: textFieldBorderColor,
             backgroundColor: backgroundColor,
             borderWidth: 1.0)
@@ -52,7 +52,7 @@ class ATCClassicSignUpViewController: UIViewController {
 
         emailTextField.configure(color: textFieldColor,
                                  font: textFieldFont,
-                                 cornerRadius: 40/2,
+                                 cornerRadius: 55/2,
                                  borderColor: textFieldBorderColor,
             backgroundColor: backgroundColor,
             borderWidth: 1.0)
@@ -61,7 +61,7 @@ class ATCClassicSignUpViewController: UIViewController {
 
         phoneNumberTextField.configure(color: textFieldColor,
                                        font: textFieldFont,
-                                       cornerRadius: 40/2,
+                                       cornerRadius: 55/2,
                                        borderColor: textFieldBorderColor,
             backgroundColor: backgroundColor,
             borderWidth: 1.0)
@@ -70,7 +70,7 @@ class ATCClassicSignUpViewController: UIViewController {
 
         passwordTextField.configure(color: textFieldColor,
                                     font: textFieldFont,
-                                    cornerRadius: 40/2,
+                                    cornerRadius: 55/2,
                                     borderColor: textFieldBorderColor,
                                     backgroundColor: backgroundColor,
                                     borderWidth: 1.0)
@@ -82,7 +82,7 @@ class ATCClassicSignUpViewController: UIViewController {
         signUpButton.addTarget(self, action: #selector(didTapSignUpButton), for: .touchUpInside)
         signUpButton.configure(color: backgroundColor,
                                font: buttonFont,
-                               cornerRadius: 40/2,
+                               cornerRadius: 55/2,
                                backgroundColor: UIColor(hexString: "#334D92"))
 
         self.hideKeyboardWhenTappedAround()

@@ -78,9 +78,9 @@ class EmojiCell: UICollectionViewCell {
         priceLabel.text = numberFormatter.string(from: NSNumber(value: Float(product.price)/100))!
         emojiLabel.text = product.emoji
       
-//        emojiImage.image = UIImage(named: "logo.png")
-//        emojiImage.frame = CGRect(x: 0, y: 00, width: 20, height: 20)
-//        emojiImage.contentMode = .scaleToFill
+        emojiImage.image = UIImage(named: product.image)
+//        emojiImage.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+//       emojiImage.contentMode = .scaleToFill
      
    
          // this downloads the image asynchronously if it's not cached yet
@@ -111,9 +111,9 @@ class EmojiCell: UICollectionViewCell {
             emojiContentBackground.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -emojiBackgroundBottomPadding),
             
             emojiLabel.centerXAnchor.constraint(equalTo: emojiContentBackground.centerXAnchor),
-            emojiLabel.centerYAnchor.constraint(equalTo: emojiContentBackground.centerYAnchor),
-//           emojiImage.centerXAnchor.constraint(equalTo: emojiContentBackground.centerXAnchor),
-//            emojiImage.centerYAnchor.constraint(equalTo: emojiContentBackground.centerYAnchor),
+            emojiLabel.centerYAnchor.constraint(equalTo: emojiContentBackground.bottomAnchor, constant: -20),
+       emojiImage.centerXAnchor.constraint(equalTo: emojiContentBackground.centerXAnchor),
+           emojiImage.centerYAnchor.constraint(equalTo: emojiContentBackground.centerYAnchor, constant: -10),
             
             priceLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: defaultPadding),
             priceLabel.centerYAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -emojiBackgroundBottomPadding/2),
