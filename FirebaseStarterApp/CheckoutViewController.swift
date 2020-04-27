@@ -14,7 +14,7 @@ class CheckoutViewController: UIViewController {
     // 1) To get started with2 this demo, first head to https://dashboard.stripe.com/account/apikeys
     // and copy your "Test Publishable Key" (it looks like pk_test_abcdef) into the line below.
 //    var stripePublishableKey = "pk_live_zhvSJdOt5e3ZxUiy2aOUk9rL00NteMVSrJ"
-    var stripePublishableKey = "pk_test_gJkD9uVVrv6Wes6v8Rjg6naO00MBG0Y0G3"
+    var stripePublishableKey = "pk_live_zhvSJdOt5e3ZxUiy2aOUk9rL00NteMVSrJ"
 
     // 2) Next, optionally, to have this demo save your user's payment details, head to
     // https://github.com/stripe/example-mobile-backend/tree/v18.1.0, click "Deploy to Heroku", and follow
@@ -101,18 +101,22 @@ class CheckoutViewController: UIViewController {
 
         self.tableView = UITableView()
 
-        let paymentSelectionFooter = PaymentContextFooterView(text:
-            """
-The sample backend attaches some test cards:
+//        let paymentSelectionFooter = PaymentContextFooterView(text:
+//            """
+//The sample backend attaches some test cards:
+//
+//• 4242 4242 4242 4242
+//    A default VISA card.
+//
+//• 4000 0000 0000 3220
+//    Use this to test 3D Secure 2 authentication.
+//
+//See https://stripe.com/docs/testing.
+//""")
+                let paymentSelectionFooter = PaymentContextFooterView(text:
+                    """
 
-• 4242 4242 4242 4242
-    A default VISA card.
-
-• 4000 0000 0000 3220
-    Use this to test 3D Secure 2 authentication.
-
-See https://stripe.com/docs/testing.
-""")
+        """)
         paymentSelectionFooter.theme = settings.theme
         paymentContext.paymentOptionsViewControllerFooterView = paymentSelectionFooter
 
@@ -121,19 +125,19 @@ See https://stripe.com/docs/testing.
         paymentContext.addCardViewControllerFooterView = addCardFooter
 
         self.paymentContext = paymentContext
-
-        self.paymentRow = CheckoutRowView(title: "Pay from", detail: "Select payment method")
+         let image : UIImage = UIImage()
+        self.paymentRow = CheckoutRowView(title: "Pay from", detail: "Select payment method", detailImage: image)
         if let requiredFields = config.requiredShippingAddressFields, !requiredFields.isEmpty {
             var shippingString = "Contact"
             if requiredFields.contains(.postalAddress) {
                 shippingString = config.shippingType == .shipping ? "Ship to" : "Deliver to"
             }
             self.shippingRow = CheckoutRowView(title: shippingString,
-                                               detail: "Select address")
+                                               detail: "Select address", detailImage: image)
         } else {
             self.shippingRow = nil
         }
-        self.totalRow = CheckoutRowView(title: "Total", detail: "", tappable: false)
+        self.totalRow = CheckoutRowView(title: "Total", detail: "", tappable: false, detailImage: image)
         self.buyButton = BuyButton(enabled: false, title: "Buy")
         let numberFormatter = NumberFormatter()
         numberFormatter.locale = settings.currencyLocale
@@ -331,7 +335,13 @@ extension CheckoutViewController: STPPaymentContextDelegate {
     func paymentContextDidChange(_ paymentContext: STPPaymentContext) {
         self.paymentRow.loading = paymentContext.loading
         if let paymentOption = paymentContext.selectedPaymentOption {
-            self.paymentRow.detail = paymentOption.label
+            if (paymentOption.label == "Apple Pay"){
+                let image : UIImage = UIImage(named: "applepay")!
+                self.paymentRow.detailImage = image
+                self.paymentRow.detail = ""//UIImage?("applepay")
+                
+            }else{
+                self.paymentRow.detail = paymentOption.label}
         } else {
             self.paymentRow.detail = "Select Payment"
         }
@@ -413,6 +423,11 @@ extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {
         let product = self.products[indexPath.item]
         cell.configure(with: product, numberFormatter: self.numberFormatter)
         cell.selectionStyle = .none
+
+        //Soon Detail product image
+//        let image : UIImage = UIImage(named: "apple")!
+//        cell.imageView?.image = image
+         
         return cell
     }
 }

@@ -36,20 +36,33 @@ class CheckoutRowView: UIView {
     var detail: String = "" {
         didSet {
             self.detailLabel.text = detail
+            
         }
     }
+    var detailImage : UIImage = UIImage(){
+        didSet{
+            self.detailLabelImage.image = detailImage
+        }
+    }
+
+    
+
 
     var onTap: () -> () = {}
 
     fileprivate let titleLabel = UILabel()
     fileprivate let detailLabel = UILabel()
+    fileprivate var detailLabelImage = UIImageView()
     fileprivate let activityIndicator = UIActivityIndicatorView(style: .gray)
     fileprivate let backgroundView = HighlightingButton()
 
-    convenience init(title: String, detail: String, tappable: Bool = true) {
+    convenience init(title: String, detail: String, tappable: Bool = true, detailImage: UIImage) {
         self.init()
         self.title = title
         self.detail = detail
+        self.detailImage = detailImage
+        
+
 
         self.backgroundView.addTarget(self, action: #selector(didTap), for: .touchUpInside)
         self.addSubview(self.backgroundView)
@@ -59,7 +72,13 @@ class CheckoutRowView: UIView {
         self.titleLabel.font = .systemFont(ofSize: 16, weight: .medium)
         self.addSubview(self.titleLabel)
         self.detailLabel.text = detail
+        self.detailLabelImage.image = detailImage
         self.detailLabel.backgroundColor = UIColor.clear
+        
+      
+        
+        
+        
         self.detailLabel.textAlignment = .right;
         self.detailLabel.font = .systemFont(ofSize: 16, weight: .regular)
         self.backgroundColor = .white
@@ -73,7 +92,9 @@ class CheckoutRowView: UIView {
             self.activityIndicator.style = .medium
         }
         #endif
-
+        
+        
+        self.addSubview(self.detailLabelImage)
         self.addSubview(self.detailLabel)
         self.addSubview(self.activityIndicator)
 
@@ -92,7 +113,7 @@ class CheckoutRowView: UIView {
     }
 
     func installConstraints() {
-        for view in [backgroundView, titleLabel, detailLabel, activityIndicator] {
+        for view in [backgroundView, titleLabel, detailLabel, activityIndicator, detailLabelImage] {
             view.translatesAutoresizingMaskIntoConstraints = false
         }
         
@@ -109,7 +130,8 @@ class CheckoutRowView: UIView {
             
             detailLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -insetPadding),
             detailLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            
+            detailLabelImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -insetPadding),
+            detailLabelImage.centerYAnchor.constraint(equalTo: centerYAnchor),
             activityIndicator.centerXAnchor.constraint(equalTo: detailLabel.centerXAnchor),
             activityIndicator.centerYAnchor.constraint(equalTo: detailLabel.centerYAnchor),
             ])
