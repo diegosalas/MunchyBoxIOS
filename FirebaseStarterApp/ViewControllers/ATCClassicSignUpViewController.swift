@@ -25,7 +25,7 @@ class ATCClassicSignUpViewController: UIViewController {
     
     private let textFieldBorderColor = UIColor(hexString: "#B0B3C6")
 
-    private let titleFont = UIFont.boldSystemFont(ofSize: 30)
+    private let titleFont = UIFont.boldSystemFont(ofSize: 16)
     private let textFieldFont = UIFont.systemFont(ofSize: 16)
     private let buttonFont = UIFont.boldSystemFont(ofSize: 20)
 

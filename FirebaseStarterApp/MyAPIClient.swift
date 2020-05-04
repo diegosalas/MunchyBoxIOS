@@ -46,6 +46,17 @@ class MyAPIClient: NSObject, STPCustomerEphemeralKeyProvider {
             params["shipping"] = shippingMethod.identifier
         }
         params["country"] = country
+        
+        let defaults = UserDefaults.standard
+        params["application_fee_amount"] = 025
+        
+        if let DriverAccount = defaults.string(forKey: "account") {
+              print(DriverAccount)
+              params["destination"] = DriverAccount
+          }
+       
+   
+      
         let jsonData = try? JSONSerialization.data(withJSONObject: params)
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -34,13 +35,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kl-jQ-2Bx" userLabel="Login Title Label">
-                                            <rect key="frame" x="20" y="133" width="334" height="20.5"/>
+                                            <rect key="frame" x="20" y="112" width="334" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LlF-qr-eCs" userLabel="Contact Point Text Field" customClass="ATCTextField" customModule="Munchy_Box" customModuleProvider="target">
-                                            <rect key="frame" x="25" y="194" width="325" height="55"/>
+                                            <rect key="frame" x="25" y="152.5" width="325" height="55"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="55" id="T8T-xu-bck"/>
                                             </constraints>
@@ -48,7 +49,7 @@
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sln-s1-Z9D" userLabel="Password Text Field" customClass="ATCTextField" customModule="Munchy_Box" customModuleProvider="target">
-                                            <rect key="frame" x="25" y="273" width="325" height="55"/>
+                                            <rect key="frame" x="25" y="231.5" width="325" height="55"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="55" id="9y5-Vm-CUp"/>
                                             </constraints>
@@ -56,7 +57,7 @@
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <button opaque="NO" contentMode="redraw" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wyk-3M-06P" userLabel="Login Button">
-                                            <rect key="frame" x="50" y="443" width="275" height="55"/>
+                                            <rect key="frame" x="25" y="401.5" width="325" height="55"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="55" id="GP9-E4-Bhd"/>
                                             </constraints>
@@ -66,10 +67,10 @@
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="redraw" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZH-en-wyc" userLabel="Facebook Button">
-                                            <rect key="frame" x="50" y="528" width="275" height="55"/>
+                                            <rect key="frame" x="25" y="486.5" width="325" height="55"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="55" id="ZkJ-5X-SEV"/>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="e6U-gm-twX"/>
+                                                <constraint firstAttribute="height" constant="55" id="e6U-gm-twX"/>
                                             </constraints>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Button"/>
@@ -83,7 +84,7 @@
                                             <state key="normal" image="arrow-back-icon"/>
                                         </button>
                                         <button opaque="NO" contentMode="redraw" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sc3-AQ-WI0" userLabel="Apple Button">
-                                            <rect key="frame" x="50" y="358" width="275" height="55"/>
+                                            <rect key="frame" x="25" y="316.5" width="325" height="55"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="55" id="oHZ-XY-mTh"/>
                                             </constraints>
@@ -103,27 +104,25 @@
                                     <constraints>
                                         <constraint firstItem="7ZH-en-wyc" firstAttribute="top" secondItem="Wyk-3M-06P" secondAttribute="bottom" constant="30" id="4tB-x1-lcB"/>
                                         <constraint firstItem="nje-YP-0F8" firstAttribute="leading" secondItem="8NB-UE-ekP" secondAttribute="leading" constant="20" id="5lb-CP-QNl"/>
-                                        <constraint firstItem="7ZH-en-wyc" firstAttribute="leading" secondItem="5iq-Hr-UY2" secondAttribute="leading" constant="50" id="5oc-7e-j1w"/>
-                                        <constraint firstAttribute="trailing" secondItem="7ZH-en-wyc" secondAttribute="trailing" constant="50" id="95a-Vs-IJg"/>
-                                        <constraint firstItem="7ZH-en-wyc" firstAttribute="leading" secondItem="5iq-Hr-UY2" secondAttribute="leading" constant="50" id="CLl-ir-qdx"/>
-                                        <constraint firstAttribute="trailing" secondItem="7ZH-en-wyc" secondAttribute="trailing" constant="50" id="EQz-Fc-th8"/>
+                                        <constraint firstItem="7ZH-en-wyc" firstAttribute="leading" secondItem="5iq-Hr-UY2" secondAttribute="leading" constant="25" id="5oc-7e-j1w"/>
+                                        <constraint firstAttribute="trailing" secondItem="7ZH-en-wyc" secondAttribute="trailing" constant="25" id="EQz-Fc-th8"/>
                                         <constraint firstAttribute="trailing" secondItem="nje-YP-0F8" secondAttribute="trailing" constant="20" id="FER-IC-ke7"/>
                                         <constraint firstAttribute="trailing" secondItem="Sln-s1-Z9D" secondAttribute="trailing" constant="25" id="Fo8-9o-1xC"/>
-                                        <constraint firstItem="1Kl-jQ-2Bx" firstAttribute="top" secondItem="nje-YP-0F8" secondAttribute="bottom" constant="21" id="Kuo-jJ-zys"/>
+                                        <constraint firstItem="1Kl-jQ-2Bx" firstAttribute="top" secondItem="nje-YP-0F8" secondAttribute="bottom" id="Kuo-jJ-zys"/>
                                         <constraint firstItem="Sln-s1-Z9D" firstAttribute="top" secondItem="LlF-qr-eCs" secondAttribute="bottom" constant="24" id="Kxs-jm-Rmm"/>
-                                        <constraint firstItem="LlF-qr-eCs" firstAttribute="top" secondItem="1Kl-jQ-2Bx" secondAttribute="bottom" constant="40.5" id="MB8-tL-H2X"/>
+                                        <constraint firstItem="LlF-qr-eCs" firstAttribute="top" secondItem="1Kl-jQ-2Bx" secondAttribute="bottom" constant="20" id="MB8-tL-H2X"/>
                                         <constraint firstAttribute="trailing" secondItem="LlF-qr-eCs" secondAttribute="trailing" constant="25" id="PfL-Ll-vVn"/>
                                         <constraint firstAttribute="trailing" secondItem="1Kl-jQ-2Bx" secondAttribute="trailing" constant="21" id="RoN-Up-Hhb"/>
                                         <constraint firstItem="nje-YP-0F8" firstAttribute="top" secondItem="5iq-Hr-UY2" secondAttribute="top" constant="12" id="RyS-Vx-hvM"/>
                                         <constraint firstItem="Sc3-AQ-WI0" firstAttribute="top" secondItem="Sln-s1-Z9D" secondAttribute="bottom" constant="30" id="T1g-QX-gZl"/>
-                                        <constraint firstAttribute="trailing" secondItem="Sc3-AQ-WI0" secondAttribute="trailing" constant="50" id="TUJ-Jr-VDn"/>
-                                        <constraint firstAttribute="trailing" secondItem="Wyk-3M-06P" secondAttribute="trailing" constant="50" id="ZJm-NA-zD3"/>
+                                        <constraint firstAttribute="trailing" secondItem="Sc3-AQ-WI0" secondAttribute="trailing" constant="25" id="TUJ-Jr-VDn"/>
+                                        <constraint firstAttribute="trailing" secondItem="Wyk-3M-06P" secondAttribute="trailing" constant="25" id="ZJm-NA-zD3"/>
                                         <constraint firstItem="8NB-UE-ekP" firstAttribute="top" secondItem="5iq-Hr-UY2" secondAttribute="top" constant="10" id="gJD-XN-DWm"/>
                                         <constraint firstItem="Sln-s1-Z9D" firstAttribute="leading" secondItem="5iq-Hr-UY2" secondAttribute="leading" constant="25" id="hMK-n5-ora"/>
-                                        <constraint firstItem="Sc3-AQ-WI0" firstAttribute="leading" secondItem="5iq-Hr-UY2" secondAttribute="leading" constant="50" id="ixk-oz-hcU"/>
+                                        <constraint firstItem="Sc3-AQ-WI0" firstAttribute="leading" secondItem="5iq-Hr-UY2" secondAttribute="leading" constant="25" id="ixk-oz-hcU"/>
                                         <constraint firstItem="1Kl-jQ-2Bx" firstAttribute="leading" secondItem="5iq-Hr-UY2" secondAttribute="leading" constant="20" id="kN1-XN-uVV"/>
                                         <constraint firstItem="8NB-UE-ekP" firstAttribute="leading" secondItem="5iq-Hr-UY2" secondAttribute="leading" constant="8" id="ocu-o4-UHI"/>
-                                        <constraint firstItem="Wyk-3M-06P" firstAttribute="leading" secondItem="5iq-Hr-UY2" secondAttribute="leading" constant="50" id="rwu-sM-ZdG"/>
+                                        <constraint firstItem="Wyk-3M-06P" firstAttribute="leading" secondItem="5iq-Hr-UY2" secondAttribute="leading" constant="25" id="rwu-sM-ZdG"/>
                                         <constraint firstItem="LlF-qr-eCs" firstAttribute="leading" secondItem="5iq-Hr-UY2" secondAttribute="leading" constant="25" id="sjL-aN-oa2"/>
                                         <constraint firstItem="Wyk-3M-06P" firstAttribute="top" secondItem="Sc3-AQ-WI0" secondAttribute="bottom" constant="30" id="z9R-FN-ECv"/>
                                     </constraints>

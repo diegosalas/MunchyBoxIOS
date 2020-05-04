@@ -85,6 +85,7 @@ class CheckoutViewController: UIViewController {
         config.requiredShippingAddressFields = settings.requiredShippingAddressFields
         config.shippingType = settings.shippingType
         config.additionalPaymentOptions = settings.additionalPaymentOptions
+        
         self.country = settings.country
         self.paymentCurrency = settings.currency
         
@@ -98,6 +99,7 @@ class CheckoutViewController: UIViewController {
             return result + product.price
         }
         paymentContext.paymentCurrency = self.paymentCurrency
+        
 
         self.tableView = UITableView()
 
@@ -120,7 +122,7 @@ class CheckoutViewController: UIViewController {
         paymentSelectionFooter.theme = settings.theme
         paymentContext.paymentOptionsViewControllerFooterView = paymentSelectionFooter
 
-        let addCardFooter = PaymentContextFooterView(text: "You can add custom footer views to the add card screen.")
+        let addCardFooter = PaymentContextFooterView(text: "Sugar Cane Fresh Solutions Pty Ltd")
         addCardFooter.theme = settings.theme
         paymentContext.addCardViewControllerFooterView = addCardFooter
 
@@ -246,6 +248,29 @@ class CheckoutViewController: UIViewController {
     }
 
     @objc func didTapBuy() {
+        if let userDefaults = UserDefaults(suiteName: "io.munchybox.app") {
+                  let name = userDefaults.string(forKey: "name")
+                  let id = userDefaults.string(forKey: "id")
+                  let account = userDefaults.string(forKey: "account")
+                  let country = userDefaults.string(forKey: "country")
+                   print("Driver Name :  \(String(describing: name))" )
+                   print("Driver ID :  \(String(describing: id))" )
+                   print("Driver Account :  \(String(describing: account))" )
+                   print("Driver Country :  \(String(describing: country))" )
+              }
+        let defaults = UserDefaults.standard
+        if let DriverName = defaults.string(forKey: "name") {
+            print(DriverName) // Some String Value
+        }
+        
+        if let DriverID = defaults.string(forKey: "id") {
+                  print(DriverID) // Some String Value
+              }
+      if let DriverAccount = defaults.string(forKey: "account") {
+          print(DriverAccount) // Some String Value
+      }
+   
+      
         self.paymentInProgress = true
         self.paymentContext.requestPayment()
     }
@@ -325,7 +350,7 @@ extension CheckoutViewController: STPPaymentContextDelegate {
 //             self.window = window
             
         })
-        let image = UIImage(named: "apple")
+        let image = UIImage(named: "AppIcon")
         action.setValue(image?.withRenderingMode(.alwaysOriginal), forKey: "image")
         
         alertController.addAction(action)

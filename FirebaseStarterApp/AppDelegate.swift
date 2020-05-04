@@ -16,16 +16,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        FirebaseApp.configure()
+       
+//      Start with QR
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = UINavigationController(rootViewController: LeerViewController(nibName: "LeerViewController", bundle: nil))
         self.window?.makeKeyAndVisible()
-        
+//      Start with Login
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        self.window?.rootViewController = UINavigationController(rootViewController: ATCClassicLandingScreenViewController(nibName: "ATCClassicLandingScreenViewController", bundle: nil))
+//        self.window?.makeKeyAndVisible()
         
         return true
     }
   
 
-    
+// Start with ProductBrowser
 
 //     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 //         let rootVC = BrowseProductsViewController()
@@ -36,7 +42,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //         self.window = window
 //         return true
 //     }
+    
+// Start with Login
 
+    
+    
+    
      // This method is where you handle URL opens if you are using a native scheme URLs (eg "yourexampleapp://")
      func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
          let stripeHandled = Stripe.handleURLCallback(with: url)

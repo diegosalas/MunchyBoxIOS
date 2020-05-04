@@ -19,7 +19,7 @@ class BrowseProductsViewController: UICollectionViewController {
 
     let productsAndPrices = [
         Product(emoji: "N95 Mask",image_url: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/masks4.jpg?alt=media&token=add39e7a-7912-4aee-9a66-49b9f7d4f4fd",image:"mask6", price: 1000),
-        Product(emoji: "Sanitizer", image_url: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/sanitizer.png?alt=media&token=ee1ccf00-909c-4298-b68b-719ae15f0da9", image:"sanitizer", price: 250),
+        Product(emoji: "Sanitizer", image_url: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/sanitizer.png?alt=media&token=ee1ccf00-909c-4298-b68b-719ae15f0da9", image:"sanitizer", price: 850),
         Product(emoji: "Mini Listerine",image_url: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/lister.png?alt=media&token=d6442ff6-80dc-4651-b283-fa70eac34e20", image:"lister",price: 650),
         Product(emoji: "Boss Coffee",image_url: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/BOSS.png?alt=media&token=ebd1fecc-34b3-4327-913f-f98419240f33", image:"boss", price: 700),
         Product(emoji: "Mini Soft Drink",image_url: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/redbul.png?alt=media&token=f49541c7-ff5f-4d94-bd33-e7cc1ec3cf21", image:"cocacola", price: 300),
@@ -38,6 +38,12 @@ class BrowseProductsViewController: UICollectionViewController {
         Product(emoji: "M&M Tube",image_url: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/m%26m.png?alt=media&token=ffe8fceb-9bb4-4944-b082-26d72e894274", image:"mm", price: 500),
         Product(emoji: "Snickers Fun Size",image_url: "https://firebasestorsage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/Snicke.png?alt=media&token=83a6ff60-d334-4171-9282-37ff0c1bee10", image:"snicke", price: 200),
         Product(emoji: "Extra",image_url: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/extra.png?alt=media&token=020f8d80-9ff4-432c-bccf-0bb87581e7d1", image:"extra", price: 500),
+        Product(emoji: "Redbull",image_url: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/redbul.png?alt=media&token=f49541c7-ff5f-4d94-bd33-e7cc1ec3cf21", image:"redbull", price: 600),
+        Product(emoji: "Oreo",image_url: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/oreograb.png?alt=media&token=c1138d2f-4cb5-4bb3-852f-fb1b56d40545", image:"oreo", price: 300),
+        Product(emoji: "Allen´s Pythons",image_url: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/allenp.png?alt=media&token=b56cb7d6-3178-45c8-aff6-34048f87a0d7", image:"allenp", price: 900),
+        Product(emoji: "Up&Go",image_url: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/up%26go.png?alt=media&token=88dcc2a5-48ff-44cc-9ea8-99c651b545a6", image:"up_go", price: 600),
+        Product(emoji: "Cadbury Bar",image_url: "https://firebasestorage.googleapis.com/v0/b/mbox-eff46.appspot.com/o/cadbur.png?alt=media&token=7c1734d5-9b69-49fc-93db-fc7a3b425dda", image:"cadbur", price: 800),
+
     ]
     
     var shoppingCart = [Product]() {

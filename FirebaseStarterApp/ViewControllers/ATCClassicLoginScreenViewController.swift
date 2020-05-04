@@ -16,8 +16,9 @@ import CryptoKit
 
 
 class ATCClassicLoginScreenViewController: UIViewController, ASAuthorizationControllerPresentationContextProviding {
+    @available(iOS 13.0, *)
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-      var window: UIWindow?
+        var window: UIWindow?
         return window!
       
     }
@@ -39,7 +40,7 @@ class ATCClassicLoginScreenViewController: UIViewController, ASAuthorizationCont
   private let backgroundColor = HelperDarkMode.mainThemeBackgroundColor
   private let tintColor = UIColor(hexString: "#ff5a66")
   
-  private let titleFont = UIFont.boldSystemFont(ofSize: 30)
+  private let titleFont = UIFont.boldSystemFont(ofSize: 16)
   private let buttonFont = UIFont.boldSystemFont(ofSize: 19)
   
   private let textFieldFont = UIFont.systemFont(ofSize: 16)
@@ -98,13 +99,20 @@ class ATCClassicLoginScreenViewController: UIViewController, ASAuthorizationCont
                              font: buttonFont,
                              cornerRadius: 55/2,
                              backgroundColor: UIColor(hexString: "#334D92"))
-    appleButton.setTitle("Sign In with Apple", for: .normal)
-    appleButton.addTarget(self, action: #selector(didTapAppleButton), for: .touchUpInside)
+ 
+    
+    if #available(iOS 13, *) {
+        appleButton.setTitle("Sign In with Apple", for: .normal)
+         appleButton.addTarget(self, action: #selector(didTapAppleButton), for: .touchUpInside)
 
-    appleButton.configure(color: UIColor.white ,
-                             font: buttonFont,
-                             cornerRadius: 55/2,
-                             backgroundColor: UIColor(hexString: "000000"  ))
+         appleButton.configure(color: UIColor.white ,
+                                  font: buttonFont,
+                                  cornerRadius: 55/2,
+                                  backgroundColor: UIColor(hexString: "000000"  ))
+      
+    } else {
+        appleButton.isHidden = true
+    }
      
     
     
@@ -154,7 +162,11 @@ class ATCClassicLoginScreenViewController: UIViewController, ASAuthorizationCont
     @objc func didTapAppleButton() {
 
    
-         startSignInWithAppleFlow()
+        if #available(iOS 13, *) {
+            startSignInWithAppleFlow()
+        } else {
+            // Fallback on earlier versions
+        }
         
        
       

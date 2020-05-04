@@ -15,7 +15,7 @@ target 'Munchy Box' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'Stripe'
-  pod 'URLImage'
+  
  
 
 
