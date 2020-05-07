@@ -46,14 +46,14 @@ class MyAPIClient: NSObject, STPCustomerEphemeralKeyProvider {
             params["shipping"] = shippingMethod.identifier
         }
         params["country"] = country
-        
-        let defaults = UserDefaults.standard
-        params["application_fee_amount"] = 025
-        
-        if let DriverAccount = defaults.string(forKey: "account") {
-              print(DriverAccount)
-              params["destination"] = DriverAccount
-          }
+//        Identify Driver
+//        let defaults = UserDefaults.standard
+//        params["application_fee_amount"] = 025
+//
+//        if let DriverAccount = defaults.string(forKey: "account") {
+//              print(DriverAccount)
+//              params["destination"] = DriverAccount
+//          }
        
    
       
@@ -70,7 +70,7 @@ class MyAPIClient: NSObject, STPCustomerEphemeralKeyProvider {
                 let secret = json?["secret"] as? String else {
                     completion(.failure(error ?? APIError.unknown))
                     return
-            }
+               }
             completion(.success(secret))
         })
         task.resume()
