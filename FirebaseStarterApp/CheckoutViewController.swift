@@ -308,7 +308,7 @@ extension CheckoutViewController: STPPaymentContextDelegate {
     func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPPaymentStatusBlock) {
         // Create the PaymentIntent on the backend
         // To speed this up, create the PaymentIntent earlier in the checkout flow and update it as necessary (e.g. when the cart subtotal updates or when shipping fees and taxes are calculated, instead of re-creating a PaymentIntent for every payment attempt.
-        MyAPIClient.sharedClient.createPaymentIntent(products: self.products, shippingMethod: paymentContext.selectedShippingMethod, country: self.country) { result in
+        MyAPIClient.sharedClient.createPaymentIntent(amount: self.paymentContext.paymentAmount, products: self.products, shippingMethod: paymentContext.selectedShippingMethod, country: self.country) { result in
             switch result {
             case .success(let clientSecret):
                 // Confirm the PaymentIntent

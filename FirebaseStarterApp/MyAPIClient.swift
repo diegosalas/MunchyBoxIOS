@@ -31,7 +31,7 @@ class MyAPIClient: NSObject, STPCustomerEphemeralKeyProvider {
         }
     }
     
-    func createPaymentIntent(products: [Product], shippingMethod: PKShippingMethod?, country: String? = nil, completion: @escaping ((Result<String, Error>) -> Void)) {
+    func createPaymentIntent(amount: Int, products: [Product], shippingMethod: PKShippingMethod?, country: String? = nil, completion: @escaping ((Result<String, Error>) -> Void)) {
         let url = self.baseURL.appendingPathComponent("create_payment_intent")
         var params: [String: Any] = [
             "metadata": [
@@ -46,15 +46,21 @@ class MyAPIClient: NSObject, STPCustomerEphemeralKeyProvider {
             params["shipping"] = shippingMethod.identifier
         }
         params["country"] = country
+        params["amount"] = amount
+        let application_fee_amount =  (6 * amount) / 100
 //        Identify Driver
-//        let defaults = UserDefaults.standard
-//        params["application_fee_amount"] = 025
-//
-//        if let DriverAccount = defaults.string(forKey: "account") {
-//              print(DriverAccount)
-//              params["destination"] = DriverAccount
-//          }
-       
+        let defaults = UserDefaults.standard
+        params["application_fee_amount"] =  application_fee_amount
+        
+        if let DriverAccount = defaults.string(forKey: "account") {
+              print(DriverAccount)
+              params["destination"] = DriverAccount
+//              params ["transfer_data"] = [
+//                        "transfer_data": [
+//                            "destination": DriverAccount,
+//                        ],
+//                    ]
+        }
    
       
         let jsonData = try? JSONSerialization.data(withJSONObject: params)
