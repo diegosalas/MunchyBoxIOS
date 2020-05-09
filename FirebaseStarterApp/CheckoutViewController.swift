@@ -13,21 +13,38 @@ class CheckoutViewController: UIViewController {
     var window: UIWindow?
     // 1) To get started with2 this demo, first head to https://dashboard.stripe.com/account/apikeys
     // and copy your "Test Publishable Key" (it looks like pk_test_abcdef) into the line below.
-    var stripePublishableKey = "pk_test_gJkD9uVVrv6Wes6v8Rjg6naO00MBG0Y0G3"
+//    var stripePublishableKey = "pk_test_gJkD9uVVrv6Wes6v8Rjg6naO00MBG0Y0G3"
 //    var stripePublishableKey = "pk_live_zhvSJdOt5e3ZxUiy2aOUk9rL00NteMVSrJ"
-
+    #if DEBUG
+        var stripePublishableKey = "pk_test_gJkD9uVVrv6Wes6v8Rjg6naO00MBG0Y0G3"
+    #else
+        var stripePublishableKey = "pk_live_zhvSJdOt5e3ZxUiy2aOUk9rL00NteMVSrJ"
+    #endif
+    
+    
     // 2) Next, optionally, to have this demo save your user's payment details, head to
     // https://github.com/stripe/example-mobile-backend/tree/v18.1.0, click "Deploy to Heroku", and follow
     // the instructions (don't worry, it's free). Replace nil on the line below with your
     // Heroku URL (it looks like https://blazing-sunrise-1234.herokuapp.com ).
 //    var backendBaseURL: String? = "https://munchyiosserver.herokuapp.com/"
-    var backendBaseURL: String? = "https://munchyiosservertest.herokuapp.com/"
+   
+    #if DEBUG
+         var backendBaseURL: String? = "https://munchyiosservertest.herokuapp.com/"
+    #else
+         var backendBaseURL: String? = "https://munchyiosserver.herokuapp.com/"
+    #endif
+    
+    
     // 3) Optionally, to enable Apple Pay, follow the instructions at https://stripe.com/docs/mobile/apple-pay
     // to create an Apple Merchant ID. Replace nil on the line below with it (it looks like merchant.com.yourappname).
-    var appleMerchantID: String? = "merchant.com.munchybox.io"
+    var appleMerchantID: String? = "merchant.stripe.munchybox"
 
     // These values will be shown to the user when they purchase with Apple Pay.
+    
+  
     let companyName = "Munchy Box"
+    
+    
     let paymentCurrency: String
 
     let paymentContext: STPPaymentContext
@@ -262,7 +279,7 @@ class CheckoutViewController: UIViewController {
         if let DriverName = defaults.string(forKey: "name") {
             print(DriverName) // Some String Value
         }
-        
+
         if let DriverID = defaults.string(forKey: "id") {
                   print(DriverID) // Some String Value
               }

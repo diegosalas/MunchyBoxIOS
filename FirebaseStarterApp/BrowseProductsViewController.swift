@@ -90,7 +90,12 @@ class BrowseProductsViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Munchy Box"
+        #if DEBUG
+               self.navigationItem.title = "Munchy Box DEBUG"
+        #else
+               self.navigationItem.title = "Munchy Box"
+        #endif
+     
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.view.backgroundColor = .white
         collectionView?.backgroundColor = UIColor(red: 246/255, green: 249/255, blue: 252/255, alpha: 1)

@@ -632,7 +632,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Munchy BoxDebug.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = HWV4X6G5UE;
 				INFOPLIST_FILE = FirebaseStarterApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -640,7 +640,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.8;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.munchybox.app;
 				PRODUCT_NAME = "Munchy Box";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -657,7 +657,7 @@
 				CODE_SIGN_ENTITLEMENTS = FirebaseStarterApp/FirebaseStarterApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = HWV4X6G5UE;
 				INFOPLIST_FILE = FirebaseStarterApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -665,7 +665,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.8;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.munchybox.app;
 				PRODUCT_NAME = "Munchy Box";
 				PROVISIONING_PROFILE_SPECIFIER = "";
